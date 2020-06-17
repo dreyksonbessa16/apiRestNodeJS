@@ -32,7 +32,7 @@ exports.postProdutos = (req, res, next) => {
     if (error) {return res.status(500).send({ error: error })}
     conn.query(
       "INSERT INTO produtos (nome, preco, imagem_produto) VALUES (?, ?, ?);",
-      [req.body.nome, req.body.preco, req.file.path],
+      [req.body.nome, req.body.preco, req.body.imagem_produto],
       (error, result, field) => {
         conn.release();
         if (error) {return res.status(500).send({ error: error })}
@@ -41,7 +41,7 @@ exports.postProdutos = (req, res, next) => {
           produtoCriado: {
             nome: req.body.nome,
             preco: req.body.preco,
-            imagem: req.file.path,
+            imagem: req.body.imagem_produto,
             request: {
               tipo: "GET",
               descricao: "Retorna todos os produtos",

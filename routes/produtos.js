@@ -36,7 +36,7 @@ const upload = multer({
 
 //Retorna todos os produtos
 router.get('/', ProdutosController.getProdutos);
-router.post('/',login.obrigatorio, upload.single('imagem_produto'), ProdutosController.postProdutos);
+router.post('/',login.obrigatorio, ProdutosController.postProdutos);
 router.get('/:id_produto', ProdutosController.getProdutosIdProduto);
 router.patch('/', login.obrigatorio , ProdutosController.patchProdutos);
 router.delete('/', login.obrigatorio, ProdutosController.deleteProdutos);
