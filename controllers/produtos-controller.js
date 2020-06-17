@@ -17,7 +17,7 @@ exports.getProdutos = (req, res, next) => {
             request: {
               tipo: "GET",
               descricao: "Retorna os dados de um produto específico",
-              url: proccess.env.URL_API + "produtos/" + prod.id_produto,
+              url: process.env.URL_API + "produtos/" + prod.id_produto,
             },
           };
         }),
@@ -45,7 +45,7 @@ exports.postProdutos = (req, res, next) => {
             request: {
               tipo: "GET",
               descricao: "Retorna todos os produtos",
-              url: proccess.env.URL_API + "produtos",
+              url: process.env.URL_API + "produtos",
             },
           },
         };
@@ -73,7 +73,7 @@ exports.getProdutosIdProduto = (req, res, next) => {
             request: {
               tipo: "GET",
               descricao: "Retorna um produto",
-              url: proccess.env.URL_API + "produtos/" + result.id_produto,
+              url: process.env.URL_API + "produtos/" + result.id_produto,
             },
           },
         };
@@ -103,7 +103,7 @@ exports.patchProdutos = (req, res, next) => {
             request: {
               tipo: "GET",
               descricao: "Retorna os dados de um produto específico",
-              url: proccess.env.URL_API + "produtos/" + req.body.id_produto,
+              url: process.env.URL_API + "produtos/" + req.body.id_produto,
             },
           },
         };
@@ -128,7 +128,7 @@ exports.deleteProdutos = (req, res, next) => {
           request: {
             tipo: "POST",
             descricao: "Insere um produto",
-            url: proccess.env.URL_API + "produtos/",
+            url: process.env.URL_API + "produtos/",
             body: {
               nome: "string",
               preco: "number",

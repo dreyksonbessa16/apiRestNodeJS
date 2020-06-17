@@ -52,7 +52,7 @@ exports.getLogin = (req, res, next) => {
               id_usuario: results[0].id_usuario,
               email: results[0].email,
             },
-            proccess.env.JWT_KEY,
+            process.env.JWT_KEY,
             {
               expiresIn: "1h",
             }
